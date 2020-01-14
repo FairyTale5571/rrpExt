@@ -1,0 +1,10 @@
+﻿  pch.cpp
+  dllmain.cpp
+  MathLibrary.cpp
+e:\work2\dll2\dll2\mathlibrary.cpp(399): warning C4244: 'initializing': conversion from '__int64' to 'double', possible loss of data
+e:\work2\dll2\dll2\mathlibrary.cpp(400): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+e:\work2\dll2\dll2\mathlibrary.cpp(507): warning C4244: 'initializing': conversion from '__int64' to 'double', possible loss of data
+e:\work2\dll2\dll2\mathlibrary.cpp(508): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+     Creating library E:\work2\Dll2\Debug\Dll2.lib and object E:\work2\Dll2\Debug\Dll2.exp
+  Dll2.vcxproj -> E:\work2\Dll2\Debug\Dll2.dll

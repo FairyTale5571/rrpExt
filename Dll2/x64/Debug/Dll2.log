@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  dllmain.cpp
+  MathLibrary.cpp
+  Generating Code...
+     Creating library E:\work2\Dll2\x64\Debug\MyExtension_x64.lib and object E:\work2\Dll2\x64\Debug\MyExtension_x64.exp
+  Dll2.vcxproj -> E:\work2\Dll2\x64\Debug\MyExtension_x64.dll
