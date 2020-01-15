@@ -23,7 +23,7 @@
 
 #pragma comment(lib, "wbemuuid.lib")
 using namespace std;
-#define CURRENT_VERSION "1.0.0.1"
+#define CURRENT_VERSION "1.0.0 by FT5571 / rimasrp.life copyright"
 #define BUFSIZE 1024
 #define MD5LEN  16
 
@@ -381,7 +381,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 //		for (int a = 0; a < 7; a++, output[i++] = ',') {
 			m_DiskCount = 0;
 			m_DiskNo = 0;
-			if (str[a].compare("HDD")==0) {
+			if (str[a].compare("HDDQ")==0) {
 				m_DiskCount = 0;
 				m_DiskNo = 1;
 				//Get Hdd serial
@@ -435,7 +435,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 				i--;
 				continue;
 			}
-			if (str[a].compare("CPU") == 0) {
+			if (str[a].compare("CPUQ") == 0) {
 				//Get model of cpu
 				queryAndPrintResult(L"SELECT * From Win32_Processor", L"Name");
 				output[i++] = '[';
@@ -459,7 +459,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 				output[i++] = ']';
 				continue;
 			}
-			if (str[a].compare("GPU") == 0) {
+			if (str[a].compare("GPUQ") == 0) {
 				//Get GPU info
 				queryAndPrintResult(L"SELECT * FROM Win32_VideoController ", L"Name");
 				output[i++] = '[';
@@ -475,7 +475,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 				output[i++] = ']';
 				continue;
 			}
-			if (str[a].compare("MOTHERBOARD") == 0) {
+			if (str[a].compare("MOTHERBOARDQ") == 0) {
 				//Get MotherbordName
 				queryAndPrintResult(L"Select  *  from  Win32_BaseBoard ", L"Product");
 				output[i++] = '[';
@@ -491,7 +491,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 				output[i++] = ']';
 				continue;
 			}
-			if (str[a].compare("BIOS") == 0) {
+			if (str[a].compare("BIOSQ") == 0) {
 				// Get Bios info(CompanyName)
 				queryAndPrintResult(L"select * from Win32_BIOS ", L"Manufacturer");
 				output[i++] = '[';
@@ -508,7 +508,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 				output[i++] = ']';
 				continue;
 			}
-			if (str[a].compare("RAM") == 0) {
+			if (str[a].compare("RAMQ") == 0) {
 				//Get Ram info
 				queryAndPrintResult(L"SELECT * FROM Win32_PhysicalMemory ", L"Manufacturer");
 				output[i++] = '[';
@@ -548,7 +548,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 				output[i++] = ']';
 				continue;
 			}
-			if (str[a].compare("FINGER") == 0) {
+			if (str[a].compare("FINGERQ") == 0) {
 				fingerprint();
 				output[i++] = '[';
 				output[i++] = '"';
@@ -580,7 +580,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 		}
 
 		//--- Extension result
-		strncpy_s(output, outputSize, ("[" + oss.str() + "]").c_str(), _TRUNCATE);
+		strncpy_s(output, outputSize, ("Version 1.0.1 by FT5571" + oss.str() + "").c_str(), _TRUNCATE);
 
 		//--- Extension return code
 		return 200;
@@ -588,7 +588,7 @@ int __stdcall RVExtensionArgs(char *output, int outputSize, const char *function
 
 	else
 	{
-		strncpy_s(output, outputSize, "Avaliable Functions: fnc1, fnc2", outputSize - 1);
+		strncpy_s(output, outputSize, "Avaliable Functions: getVersion, getHardwares", outputSize - 1);
 		return -1;
 	}
 }
